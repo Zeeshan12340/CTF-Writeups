@@ -1,0 +1,29 @@
+#!/bin/sh
+echo "[ KernPass - bauhinia CTF 2023 ]"
+mkdir /tmp
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t tmpfs none /tmp
+
+echo 0 > /proc/sys/kernel/kptr_restrict
+echo 1 > /proc/sys/kernel/dmesg_restrict
+echo 1 > /proc/sys/vm/unprivileged_userfaultfd
+
+chmod 600 /root
+chown root:root /root
+
+chmod 600 /root/flag.txt
+chown root:root /root/flag.txt
+
+chown ctf:ctf /home/ctf
+
+insmod /root/kernpass.ko
+mknod -m 666 /dev/kernpass c `grep kernpass /proc/devices | awk '{print $1;}'` 0
+
+echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
+echo "[ KernPass - b6actf]"
+setuidgid 1000 /bin/sh
+
+umount /proc
+poweroff -d 0 -f
+
