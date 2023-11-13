@@ -1,4 +1,4 @@
-# Converter2
+# Crafting2
 
 Here, we have to actually make a very small elf file. The smallest possible file that gives a shell for 64 bit is 80 bytes but the challenge only allows 79 bytes. I tried to reduce one byte but failed and then realized that the challenge binary does not check if the elf is 64 bit and found out that the smallest file for 32 bit could be less than 79 bytes. Solution is below for 32 bit, this file is 67 bytes long and all of the elf sections are manually built out to save size, compile with `nasm -f bin -o 32 32.asm`
 
@@ -38,6 +38,6 @@ filesize      equ     $ - $$
         db "/bin/sh"
 ```
 
-There are a couple of blogs you can find which go over this but they focus on just calling exit 42 or printing "hello world", this has been modifief to call /bin/sh.
+There are a couple of blogs you can find which go over this but they focus on just calling exit 42 or printing "hello world", this has been modified to call `/bin/sh`.
 
 Just `cat 32 | ./chall` to get the flag.
