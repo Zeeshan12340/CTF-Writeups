@@ -1,0 +1,14 @@
+// used algo -  can you reverse it?
+const a = "???"
+let out = ""
+for(let i = 0; i < a.length; i++) {
+    let temp = a.charCodeAt(i) & 0xFF
+    let l = temp & 0x0F
+    let h = (temp >> 4) & 0xFF;
+
+    if ((i+1) == a.length) {
+        out += l +":"+ h
+    } else {
+        out += l +":"+ h+"-"
+    }
+}

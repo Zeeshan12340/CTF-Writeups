@@ -1,0 +1,8 @@
+https://medium.com/@h4x0r_dz/23000-for-authentication-bypass-file-upload-arbitrary-file-overwrite-2578b730a5f8
+
+read source code, find subdomain(possible using bruteforce too maybe), admin.pwnme.org
+
+use creds to generate jwt, intercept request, decode, change realm to admin.pwnme.org,
+
+change value in browser tools->storage->Session Storage->access_token
+go to admin.pwnme.org, get flag
